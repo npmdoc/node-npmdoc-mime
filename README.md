@@ -1,11 +1,13 @@
-# api documentation for  [mime (v1.3.4)](https://github.com/broofa/node-mime)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mime)
+# api documentation for  [mime (v1.3.4)](https://github.com/broofa/node-mime)  [![npm package](https://img.shields.io/npm/v/npmdoc-mime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mime)
 #### A comprehensive library for mime-type mapping
 
 [![NPM](https://nodei.co/npm/mime.png?downloads=true)](https://www.npmjs.com/package/mime)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-mime/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-mime_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mime/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-mime/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-mime_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mime/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-mime/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-mime/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-mime/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
