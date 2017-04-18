@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/broofa/node-mime"
-
-    >mime (v1.3.4)</a>
+    <a href="https://github.com/broofa/node-mime">mime (v1.3.4)</a>
 </h1>
 <h4>A comprehensive library for mime-type mapping</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.mime">module mime</a><ol>
 
@@ -292,10 +285,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Mime() {
-  // Map of extension -&#x3e; mime type
+  // Map of extension -&gt; mime type
   this.types = Object.create(null);
 
-  // Map of mime type -&#x3e; extension
+  // Map of mime type -&gt; extension
   this.extensions = Object.create(null);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -313,10 +306,10 @@
     <li>description and source-code<pre class="apidocCodePre">Mime.prototype.define = function (map) {
   for (var type in map) {
     var exts = map[type];
-    for (var i = 0; i &#x3c; exts.length; i++) {
-      if (process.env.DEBUG_MIME &#x26;&#x26; this.types[exts]) {
-        console.warn(this._loading.replace(/.*\//, &#x27;&#x27;), &#x27;changes &#x22;&#x27; + exts[i] + &#x27;&#x22; extension type from &#x27; +
-          this.types[exts] + &#x27; to &#x27; + type);
+    for (var i = 0; i &lt; exts.length; i++) {
+      if (process.env.DEBUG_MIME &amp;&amp; this.types[exts]) {
+        console.warn(this._loading.replace(/.*\//, ''), 'changes "' + exts[i] + '" extension type from ' +
+          this.types[exts] + ' to ' + type);
       }
 
       this.types[exts[i]] = type;
@@ -360,12 +353,12 @@
   this._loading = file;
   // Read file and split into lines
   var map = {},
-      content = fs.readFileSync(file, &#x27;ascii&#x27;),
+      content = fs.readFileSync(file, 'ascii'),
       lines = content.split(/[\r\n]+/);
 
   lines.forEach(function(line) {
     // Clean up whitespace/comments, and split into fields
-    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, &#x27;&#x27;).split(/\s+/);
+    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, '').split(/\s+/);
     map[fields.shift()] = fields;
   });
 
@@ -386,7 +379,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Mime.prototype.lookup = function (path, fallback) {
-  var ext = path.replace(/.*[\.\/\\]/, &#x27;&#x27;).toLowerCase();
+  var ext = path.replace(/.*[\.\/\\]/, '').toLowerCase();
 
   return this.types[ext] || fallback || this.default_type;
 }</pre></li>
@@ -404,14 +397,14 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">charsets.lookup = function (mimeType, fallback) {
   // Assume text types are utf8
-  return (/^text\//).test(mimeType) ? &#x27;UTF-8&#x27; : fallback;
+  return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 Get the default extension for `type`
 
 ```js
-mime.extension(&#x27;text/html&#x27;);                 // =&#x3e; &#x27;html&#x27;
-mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27;
+mime.extension('text/html');                 // =&gt; 'html'
+mime.extension('application/octet-stream');  // =&gt; 'bin'
 ```
 
 ### mime.<span class="apidocCodeKeywordSpan">charsets.lookup</span>()
@@ -419,7 +412,7 @@ mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27
 Map mime-type to charset
 
 ```js
-mime.charsets.lookup(&#x27;text/plain&#x27;);        // =&#x3e; &#x27;UTF-8&#x27;
+mime.charsets.lookup('text/plain');        // =&gt; 'UTF-8'
 ```
 ...</pre></li>
     </ul>
@@ -449,10 +442,10 @@ mime.charsets.lookup(&#x27;text/plain&#x27;);        // =&#x3e; &#x27;UTF-8&#x27
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Mime() {
-  // Map of extension -&#x3e; mime type
+  // Map of extension -&gt; mime type
   this.types = Object.create(null);
 
-  // Map of mime type -&#x3e; extension
+  // Map of mime type -&gt; extension
   this.extensions = Object.create(null);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -475,10 +468,10 @@ mime.charsets.lookup(&#x27;text/plain&#x27;);        // =&#x3e; &#x27;UTF-8&#x27
     <li>description and source-code<pre class="apidocCodePre">define = function (map) {
   for (var type in map) {
     var exts = map[type];
-    for (var i = 0; i &#x3c; exts.length; i++) {
-      if (process.env.DEBUG_MIME &#x26;&#x26; this.types[exts]) {
-        console.warn(this._loading.replace(/.*\//, &#x27;&#x27;), &#x27;changes &#x22;&#x27; + exts[i] + &#x27;&#x22; extension type from &#x27; +
-          this.types[exts] + &#x27; to &#x27; + type);
+    for (var i = 0; i &lt; exts.length; i++) {
+      if (process.env.DEBUG_MIME &amp;&amp; this.types[exts]) {
+        console.warn(this._loading.replace(/.*\//, ''), 'changes "' + exts[i] + '" extension type from ' +
+          this.types[exts] + ' to ' + type);
       }
 
       this.types[exts[i]] = type;
@@ -504,8 +497,8 @@ Add custom mime/extension mappings
 
 ```js
 mime.define({
-&#x27;text/x-some-format&#x27;: [&#x27;x-sf&#x27;, &#x27;x-sft&#x27;, &#x27;x-sfml&#x27;],
-&#x27;application/x-my-type&#x27;: [&#x27;x-mt&#x27;, &#x27;x-mtt&#x27;],
+'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
+'application/x-my-type': ['x-mt', 'x-mtt'],
 ...</pre></li>
     </ul>
 
@@ -523,8 +516,8 @@ mime.define({
   return this.extensions[type];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-mime.lookup(&#x27;.TXT&#x27;);                      // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;htm&#x27;);                       // =&#x3e; &#x27;text/html&#x27;
+mime.lookup('.TXT');                      // =&gt; 'text/plain'
+mime.lookup('htm');                       // =&gt; 'text/html'
 ```
 
 ### mime.default_type
@@ -534,8 +527,8 @@ Sets the mime type returned when `mime.lookup` fails to find the extension searc
 Get the default extension for `type`
 
 ```js
-mime.extension(&#x27;text/html&#x27;);                 // =&#x3e; &#x27;html&#x27;
-mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27;
+mime.extension('text/html');                 // =&gt; 'html'
+mime.extension('application/octet-stream');  // =&gt; 'bin'
 ```
 ...</pre></li>
     </ul>
@@ -553,12 +546,12 @@ mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27
   this._loading = file;
   // Read file and split into lines
   var map = {},
-      content = fs.readFileSync(file, &#x27;ascii&#x27;),
+      content = fs.readFileSync(file, 'ascii'),
       lines = content.split(/[\r\n]+/);
 
   lines.forEach(function(line) {
     // Clean up whitespace/comments, and split into fields
-    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, &#x27;&#x27;).split(/\s+/);
+    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, '').split(/\s+/);
     map[fields.shift()] = fields;
   });
 
@@ -571,15 +564,15 @@ mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27
 The first entry in the extensions array is returned by `mime.extension()`. E.g.
 
 ```js
-mime.extension(&#x27;text/x-some-format&#x27;); // =&#x3e; &#x27;x-sf&#x27;
+mime.extension('text/x-some-format'); // =&gt; 'x-sf'
 ```
 
 ### mime.<span class="apidocCodeKeywordSpan">load</span>(filepath)
 
-Load mappings from an Apache &#x22;.types&#x22; format file
+Load mappings from an Apache ".types" format file
 
 ```js
-mime.load(&#x27;./my_project.types&#x27;);
+mime.load('./my_project.types');
 ```
 The .types file format is simple -  See the `types` dir for examples.
 ...</pre></li>
@@ -595,27 +588,27 @@ The .types file format is simple -  See the `types` dir for examples.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lookup = function (path, fallback) {
-  var ext = path.replace(/.*[\.\/\\]/, &#x27;&#x27;).toLowerCase();
+  var ext = path.replace(/.*[\.\/\\]/, '').toLowerCase();
 
   return this.types[ext] || fallback || this.default_type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 E.g.
 
-    &#x3e; mime scripts/jquery.js
+    &gt; mime scripts/jquery.js
     application/javascript
 
 ## API - Queries
 
 ### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
 Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last &#x27;/&#x27; or &#x27;.&#x27;).  E.g.
+ lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
 
 ```js
-var mime = require(&#x27;mime&#x27;);
+var mime = require('mime');
 
-mime.lookup(&#x27;/path/to/file.txt&#x27;);         // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&#x27;
+mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
+mime.lookup('file.txt');                  // =&gt; 'text/plain'
 ...</pre></li>
     </ul>
 
@@ -636,10 +629,10 @@ mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&
     <li>description and source-code<pre class="apidocCodePre">define = function (map) {
   for (var type in map) {
     var exts = map[type];
-    for (var i = 0; i &#x3c; exts.length; i++) {
-      if (process.env.DEBUG_MIME &#x26;&#x26; this.types[exts]) {
-        console.warn(this._loading.replace(/.*\//, &#x27;&#x27;), &#x27;changes &#x22;&#x27; + exts[i] + &#x27;&#x22; extension type from &#x27; +
-          this.types[exts] + &#x27; to &#x27; + type);
+    for (var i = 0; i &lt; exts.length; i++) {
+      if (process.env.DEBUG_MIME &amp;&amp; this.types[exts]) {
+        console.warn(this._loading.replace(/.*\//, ''), 'changes "' + exts[i] + '" extension type from ' +
+          this.types[exts] + ' to ' + type);
       }
 
       this.types[exts[i]] = type;
@@ -665,8 +658,8 @@ Add custom mime/extension mappings
 
 ```js
 mime.define({
-&#x27;text/x-some-format&#x27;: [&#x27;x-sf&#x27;, &#x27;x-sft&#x27;, &#x27;x-sfml&#x27;],
-&#x27;application/x-my-type&#x27;: [&#x27;x-mt&#x27;, &#x27;x-mtt&#x27;],
+'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
+'application/x-my-type': ['x-mt', 'x-mtt'],
 ...</pre></li>
     </ul>
 
@@ -689,8 +682,8 @@ mime.define({
   return this.extensions[type];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-mime.lookup(&#x27;.TXT&#x27;);                      // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;htm&#x27;);                       // =&#x3e; &#x27;text/html&#x27;
+mime.lookup('.TXT');                      // =&gt; 'text/plain'
+mime.lookup('htm');                       // =&gt; 'text/html'
 ```
 
 ### mime.default_type
@@ -700,8 +693,8 @@ Sets the mime type returned when `mime.lookup` fails to find the extension searc
 Get the default extension for `type`
 
 ```js
-mime.extension(&#x27;text/html&#x27;);                 // =&#x3e; &#x27;html&#x27;
-mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27;
+mime.extension('text/html');                 // =&gt; 'html'
+mime.extension('application/octet-stream');  // =&gt; 'bin'
 ```
 ...</pre></li>
     </ul>
@@ -724,12 +717,12 @@ mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27
   this._loading = file;
   // Read file and split into lines
   var map = {},
-      content = fs.readFileSync(file, &#x27;ascii&#x27;),
+      content = fs.readFileSync(file, 'ascii'),
       lines = content.split(/[\r\n]+/);
 
   lines.forEach(function(line) {
     // Clean up whitespace/comments, and split into fields
-    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, &#x27;&#x27;).split(/\s+/);
+    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, '').split(/\s+/);
     map[fields.shift()] = fields;
   });
 
@@ -742,15 +735,15 @@ mime.extension(&#x27;application/octet-stream&#x27;);  // =&#x3e; &#x27;bin&#x27
 The first entry in the extensions array is returned by `mime.extension()`. E.g.
 
 ```js
-mime.extension(&#x27;text/x-some-format&#x27;); // =&#x3e; &#x27;x-sf&#x27;
+mime.extension('text/x-some-format'); // =&gt; 'x-sf'
 ```
 
 ### mime.<span class="apidocCodeKeywordSpan">load</span>(filepath)
 
-Load mappings from an Apache &#x22;.types&#x22; format file
+Load mappings from an Apache ".types" format file
 
 ```js
-mime.load(&#x27;./my_project.types&#x27;);
+mime.load('./my_project.types');
 ```
 The .types file format is simple -  See the `types` dir for examples.
 ...</pre></li>
@@ -771,27 +764,27 @@ The .types file format is simple -  See the `types` dir for examples.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lookup = function (path, fallback) {
-  var ext = path.replace(/.*[\.\/\\]/, &#x27;&#x27;).toLowerCase();
+  var ext = path.replace(/.*[\.\/\\]/, '').toLowerCase();
 
   return this.types[ext] || fallback || this.default_type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 E.g.
 
-    &#x3e; mime scripts/jquery.js
+    &gt; mime scripts/jquery.js
     application/javascript
 
 ## API - Queries
 
 ### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
 Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last &#x27;/&#x27; or &#x27;.&#x27;).  E.g.
+ lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
 
 ```js
-var mime = require(&#x27;mime&#x27;);
+var mime = require('mime');
 
-mime.lookup(&#x27;/path/to/file.txt&#x27;);         // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&#x27;
+mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
+mime.lookup('file.txt');                  // =&gt; 'text/plain'
 ...</pre></li>
     </ul>
 
@@ -811,25 +804,25 @@ mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lookup = function (mimeType, fallback) {
   // Assume text types are utf8
-  return (/^text\//).test(mimeType) ? &#x27;UTF-8&#x27; : fallback;
+  return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 E.g.
 
-    &#x3e; mime scripts/jquery.js
+    &gt; mime scripts/jquery.js
     application/javascript
 
 ## API - Queries
 
 ### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
 Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last &#x27;/&#x27; or &#x27;.&#x27;).  E.g.
+ lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
 
 ```js
-var mime = require(&#x27;mime&#x27;);
+var mime = require('mime');
 
-mime.lookup(&#x27;/path/to/file.txt&#x27;);         // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&#x27;
+mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
+mime.lookup('file.txt');                  // =&gt; 'text/plain'
 ...</pre></li>
     </ul>
 
@@ -849,25 +842,25 @@ mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lookup = function (mimeType, fallback) {
   // Assume text types are utf8
-  return (/^text\//).test(mimeType) ? &#x27;UTF-8&#x27; : fallback;
+  return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 E.g.
 
-    &#x3e; mime scripts/jquery.js
+    &gt; mime scripts/jquery.js
     application/javascript
 
 ## API - Queries
 
 ### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
 Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last &#x27;/&#x27; or &#x27;.&#x27;).  E.g.
+ lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
 
 ```js
-var mime = require(&#x27;mime&#x27;);
+var mime = require('mime');
 
-mime.lookup(&#x27;/path/to/file.txt&#x27;);         // =&#x3e; &#x27;text/plain&#x27;
-mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&#x27;
+mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
+mime.lookup('file.txt');                  // =&gt; 'text/plain'
 ...</pre></li>
     </ul>
 
@@ -880,3 +873,4 @@ mime.lookup(&#x27;file.txt&#x27;);                  // =&#x3e; &#x27;text/plain&
     ]
 </div>
 </div>
+</body></html>
