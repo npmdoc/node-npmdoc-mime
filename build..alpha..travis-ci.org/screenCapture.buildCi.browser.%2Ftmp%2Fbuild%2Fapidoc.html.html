@@ -65,51 +65,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.define">
-            function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.define
-            <span class="apidocSignatureSpan">(map)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.extension">
-            function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.extension
-            <span class="apidocSignatureSpan">(mimeType)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.load">
-            function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.load
-            <span class="apidocSignatureSpan">(file)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.lookup">
-            function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.lookup
-            <span class="apidocSignatureSpan">(path, fallback)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.charsets.lookup">
-            function <span class="apidocSignatureSpan">mime.</span>charsets.lookup
-            <span class="apidocSignatureSpan">(mimeType, fallback)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mime.</span>Mime.prototype</span>
 
         </li>
@@ -193,76 +148,11 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.mime.Mime.prototype.define">module mime.Mime.prototype.define</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.define.define">
-            function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>define
-            <span class="apidocSignatureSpan">(map)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.mime.Mime.prototype.extension">module mime.Mime.prototype.extension</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.extension.extension">
-            function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>extension
-            <span class="apidocSignatureSpan">(mimeType)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.mime.Mime.prototype.load">module mime.Mime.prototype.load</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.load.load">
-            function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>load
-            <span class="apidocSignatureSpan">(file)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.mime.Mime.prototype.lookup">module mime.Mime.prototype.lookup</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.Mime.prototype.lookup.lookup">
-            function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>lookup
-            <span class="apidocSignatureSpan">(path, fallback)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
     <li class="apidocModuleLi"><a href="#apidoc.module.mime.charsets">module mime.charsets</a><ol>
 
         <li>
 
             <a class="apidocElementLiA" href="#apidoc.element.mime.charsets.lookup">
-            function <span class="apidocSignatureSpan">mime.charsets.</span>lookup
-            <span class="apidocSignatureSpan">(mimeType, fallback)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.mime.charsets.lookup">module mime.charsets.lookup</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.mime.charsets.lookup.lookup">
             function <span class="apidocSignatureSpan">mime.charsets.</span>lookup
             <span class="apidocSignatureSpan">(mimeType, fallback)</span>
             </a>
@@ -292,129 +182,6 @@
   this.extensions = Object.create(null);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.define" id="apidoc.element.mime.Mime.prototype.define">
-        function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.define
-        <span class="apidocSignatureSpan">(map)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">Mime.prototype.define = function (map) {
-  for (var type in map) {
-    var exts = map[type];
-    for (var i = 0; i &lt; exts.length; i++) {
-      if (process.env.DEBUG_MIME &amp;&amp; this.types[exts]) {
-        console.warn(this._loading.replace(/.*\//, ''), 'changes "' + exts[i] + '" extension type from ' +
-          this.types[exts] + ' to ' + type);
-      }
-
-      this.types[exts[i]] = type;
-    }
-
-    // Default extension is the first one we encounter
-    if (!this.extensions[type]) {
-      this.extensions[type] = exts[0];
-    }
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.extension" id="apidoc.element.mime.Mime.prototype.extension">
-        function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.extension
-        <span class="apidocSignatureSpan">(mimeType)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">Mime.prototype.extension = function (mimeType) {
-  var type = mimeType.match(/^\s*([^;\s]*)(?:;|\s|$)/)[1].toLowerCase();
-  return this.extensions[type];
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.load" id="apidoc.element.mime.Mime.prototype.load">
-        function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.load
-        <span class="apidocSignatureSpan">(file)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">Mime.prototype.load = function (file) {
-  this._loading = file;
-  // Read file and split into lines
-  var map = {},
-      content = fs.readFileSync(file, 'ascii'),
-      lines = content.split(/[\r\n]+/);
-
-  lines.forEach(function(line) {
-    // Clean up whitespace/comments, and split into fields
-    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, '').split(/\s+/);
-    map[fields.shift()] = fields;
-  });
-
-  this.define(map);
-
-  this._loading = null;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.lookup" id="apidoc.element.mime.Mime.prototype.lookup">
-        function <span class="apidocSignatureSpan">mime.</span>Mime.prototype.lookup
-        <span class="apidocSignatureSpan">(path, fallback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">Mime.prototype.lookup = function (path, fallback) {
-  var ext = path.replace(/.*[\.\/\\]/, '').toLowerCase();
-
-  return this.types[ext] || fallback || this.default_type;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.mime.charsets.lookup" id="apidoc.element.mime.charsets.lookup">
-        function <span class="apidocSignatureSpan">mime.</span>charsets.lookup
-        <span class="apidocSignatureSpan">(mimeType, fallback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">charsets.lookup = function (mimeType, fallback) {
-  // Assume text types are utf8
-  return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-Get the default extension for `type`
-
-```js
-mime.extension('text/html');                 // =&gt; 'html'
-mime.extension('application/octet-stream');  // =&gt; 'bin'
-```
-
-### mime.<span class="apidocCodeKeywordSpan">charsets.lookup</span>()
-
-Map mime-type to charset
-
-```js
-mime.charsets.lookup('text/plain');        // =&gt; 'UTF-8'
-```
-...</pre></li>
     </ul>
 
 
@@ -484,21 +251,22 @@ mime.charsets.lookup('text/plain');        // =&gt; 'UTF-8'
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+}
 
-(The logic for charset lookups is pretty rudimentary.  Feel free to suggest improvements.)
-
-## API - Defining Custom Types
-
-Custom type mappings can be added on a per-project basis via the following APIs.
-
-### mime.<span class="apidocCodeKeywordSpan">define</span>()
-
-Add custom mime/extension mappings
-
-```js
-mime.define({
-'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
-'application/x-my-type': ['x-mt', 'x-mtt'],
+/**
+ * Define mimetype -&gt; extension mappings.  Each key is a mime-type that maps
+ * to an array of extensions associated with the type.  The first extension is
+ * used as the default extension for the type.
+ *
+ * e.g. mime.<span class="apidocCodeKeywordSpan">define</span>({'audio/ogg', ['oga', 'ogg', '
+spx']});
+ *
+ * @param map (Object) type definitions
+ */
+Mime.prototype.define = function (map) {
+for (var type in map) {
+  var exts = map[type];
+  for (var i = 0; i &lt; exts.length; i++) {
 ...</pre></li>
     </ul>
 
@@ -593,198 +361,16 @@ The .types file format is simple -  See the `types` dir for examples.
   return this.types[ext] || fallback || this.default_type;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-E.g.
-
-    &gt; mime scripts/jquery.js
-    application/javascript
-
-## API - Queries
-
-### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
-Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
-
-```js
-var mime = require('mime');
-
-mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
-mime.lookup('file.txt');                  // =&gt; 'text/plain'
-...</pre></li>
-    </ul>
 
 
-</div>
 
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mime.Mime.prototype.define" id="apidoc.module.mime.Mime.prototype.define">module mime.Mime.prototype.define</a></h1>
+#!/usr/bin/env node
 
+var mime = require('./mime.js');
+var file = process.argv[2];
+var type = mime.<span class="apidocCodeKeywordSpan">lookup</span>(file);
 
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.define.define" id="apidoc.element.mime.Mime.prototype.define.define">
-        function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>define
-        <span class="apidocSignatureSpan">(map)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">define = function (map) {
-  for (var type in map) {
-    var exts = map[type];
-    for (var i = 0; i &lt; exts.length; i++) {
-      if (process.env.DEBUG_MIME &amp;&amp; this.types[exts]) {
-        console.warn(this._loading.replace(/.*\//, ''), 'changes "' + exts[i] + '" extension type from ' +
-          this.types[exts] + ' to ' + type);
-      }
-
-      this.types[exts[i]] = type;
-    }
-
-    // Default extension is the first one we encounter
-    if (!this.extensions[type]) {
-      this.extensions[type] = exts[0];
-    }
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-(The logic for charset lookups is pretty rudimentary.  Feel free to suggest improvements.)
-
-## API - Defining Custom Types
-
-Custom type mappings can be added on a per-project basis via the following APIs.
-
-### mime.<span class="apidocCodeKeywordSpan">define</span>()
-
-Add custom mime/extension mappings
-
-```js
-mime.define({
-'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
-'application/x-my-type': ['x-mt', 'x-mtt'],
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mime.Mime.prototype.extension" id="apidoc.module.mime.Mime.prototype.extension">module mime.Mime.prototype.extension</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.extension.extension" id="apidoc.element.mime.Mime.prototype.extension.extension">
-        function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>extension
-        <span class="apidocSignatureSpan">(mimeType)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">extension = function (mimeType) {
-  var type = mimeType.match(/^\s*([^;\s]*)(?:;|\s|$)/)[1].toLowerCase();
-  return this.extensions[type];
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-mime.lookup('.TXT');                      // =&gt; 'text/plain'
-mime.lookup('htm');                       // =&gt; 'text/html'
-```
-
-### mime.default_type
-Sets the mime type returned when `mime.lookup` fails to find the extension searched for. (Default is `application/octet-stream`.)
-
-### mime.<span class="apidocCodeKeywordSpan">extension</span>(type)
-Get the default extension for `type`
-
-```js
-mime.extension('text/html');                 // =&gt; 'html'
-mime.extension('application/octet-stream');  // =&gt; 'bin'
-```
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mime.Mime.prototype.load" id="apidoc.module.mime.Mime.prototype.load">module mime.Mime.prototype.load</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.load.load" id="apidoc.element.mime.Mime.prototype.load.load">
-        function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>load
-        <span class="apidocSignatureSpan">(file)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">load = function (file) {
-  this._loading = file;
-  // Read file and split into lines
-  var map = {},
-      content = fs.readFileSync(file, 'ascii'),
-      lines = content.split(/[\r\n]+/);
-
-  lines.forEach(function(line) {
-    // Clean up whitespace/comments, and split into fields
-    var fields = line.replace(/\s*#.*|^\s*|\s*$/g, '').split(/\s+/);
-    map[fields.shift()] = fields;
-  });
-
-  this.define(map);
-
-  this._loading = null;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-The first entry in the extensions array is returned by `mime.extension()`. E.g.
-
-```js
-mime.extension('text/x-some-format'); // =&gt; 'x-sf'
-```
-
-### mime.<span class="apidocCodeKeywordSpan">load</span>(filepath)
-
-Load mappings from an Apache ".types" format file
-
-```js
-mime.load('./my_project.types');
-```
-The .types file format is simple -  See the `types` dir for examples.
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mime.Mime.prototype.lookup" id="apidoc.module.mime.Mime.prototype.lookup">module mime.Mime.prototype.lookup</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.mime.Mime.prototype.lookup.lookup" id="apidoc.element.mime.Mime.prototype.lookup.lookup">
-        function <span class="apidocSignatureSpan">mime.Mime.prototype.</span>lookup
-        <span class="apidocSignatureSpan">(path, fallback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">lookup = function (path, fallback) {
-  var ext = path.replace(/.*[\.\/\\]/, '').toLowerCase();
-
-  return this.types[ext] || fallback || this.default_type;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-E.g.
-
-    &gt; mime scripts/jquery.js
-    application/javascript
-
-## API - Queries
-
-### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
-Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
-
-```js
-var mime = require('mime');
-
-mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
-mime.lookup('file.txt');                  // =&gt; 'text/plain'
+process.stdout.write(type + '\n');
 ...</pre></li>
     </ul>
 
@@ -807,60 +393,16 @@ mime.lookup('file.txt');                  // =&gt; 'text/plain'
   return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-E.g.
-
-    &gt; mime scripts/jquery.js
-    application/javascript
-
-## API - Queries
-
-### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
-Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
-
-```js
-var mime = require('mime');
-
-mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
-mime.lookup('file.txt');                  // =&gt; 'text/plain'
-...</pre></li>
-    </ul>
 
 
-</div>
 
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.mime.charsets.lookup" id="apidoc.module.mime.charsets.lookup">module mime.charsets.lookup</a></h1>
+#!/usr/bin/env node
 
+var mime = require('./mime.js');
+var file = process.argv[2];
+var type = mime.<span class="apidocCodeKeywordSpan">lookup</span>(file);
 
-    <h2>
-        <a href="#apidoc.element.mime.charsets.lookup.lookup" id="apidoc.element.mime.charsets.lookup.lookup">
-        function <span class="apidocSignatureSpan">mime.charsets.</span>lookup
-        <span class="apidocSignatureSpan">(mimeType, fallback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">lookup = function (mimeType, fallback) {
-  // Assume text types are utf8
-  return (/^text\//).test(mimeType) ? 'UTF-8' : fallback;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-E.g.
-
-    &gt; mime scripts/jquery.js
-    application/javascript
-
-## API - Queries
-
-### mime.<span class="apidocCodeKeywordSpan">lookup</span>(path)
-Get the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive
- lookup using the extension in `path` (the substring after the last '/' or '.').  E.g.
-
-```js
-var mime = require('mime');
-
-mime.lookup('/path/to/file.txt');         // =&gt; 'text/plain'
-mime.lookup('file.txt');                  // =&gt; 'text/plain'
+process.stdout.write(type + '\n');
 ...</pre></li>
     </ul>
 
