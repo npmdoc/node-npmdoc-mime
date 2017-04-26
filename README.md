@@ -1,6 +1,6 @@
 # npmdoc-mime
 
-#### api documentation for  [mime (v1.3.4)](https://github.com/broofa/node-mime)  [![npm package](https://img.shields.io/npm/v/npmdoc-mime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mime)
+#### basic api documentation for  [mime (v1.3.4)](https://github.com/broofa/node-mime)  [![npm package](https://img.shields.io/npm/v/npmdoc-mime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mime)
 
 #### A comprehensive library for mime-type mapping
 
